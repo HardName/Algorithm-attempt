@@ -12,8 +12,10 @@ import daiwei.algorithm.util.SortTestHelper;
 public class TestMain {
 
     public static void main(String[] args) {
-        Integer[] randomArray = SortTestHelper.generateRandomArray(1000, 0, 100);
-        SortTestHelper.testSort(SortName.SelectionSort, randomArray);
-        SortTestHelper.printArray(randomArray);
+//        Integer[] randomArray = SortTestHelper.generateRandomArray(10000, 0, 100);
+        Integer[] randomArray = SortTestHelper.generateNearlyOrderedArray(100000, 100);
+        Integer[] randomArray1 = randomArray.clone();
+        SortTestHelper.testSort(SortName.SelectionSort, randomArray1);
+        SortTestHelper.testSort(SortName.InsertionSort, randomArray);
     }
 }

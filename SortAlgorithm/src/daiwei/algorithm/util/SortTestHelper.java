@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 
+import daiwei.algorithm.sort.InsertionSort;
 import daiwei.algorithm.sort.SelectionSort;
 
 /**
@@ -28,6 +29,26 @@ public class SortTestHelper {
         for (int i = 0; i < arr.length; i++) {
             int rand = new Random().nextInt(ArrayRight - ArrayLeft) + ArrayLeft;
             arr[i] = rand;
+        }
+        return arr;
+    }
+
+    /**
+     * 产生一个近排序的数组(数组几乎是排好顺序的)
+     * @param n     数组元素个数
+     * @param timeSwap      数组中元素交换次数
+     * @return
+     */
+    public static Integer[] generateNearlyOrderedArray(int n, int timeSwap) {
+        Integer[] arr = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = i;
+        }
+        Random random = new Random();
+        for (int i = 0; i < timeSwap; i++) {
+            int pos1 = random.nextInt(n);
+            int pos2 = random.nextInt(n);
+            swap(arr, pos1, pos2);
         }
         return arr;
     }
@@ -59,6 +80,9 @@ public class SortTestHelper {
             case SortName.SelectionSort:
                 SelectionSort.sort(arr);
                 break;
+
+            case SortName.InsertionSort:
+                InsertionSort.sortPro(arr);
             default: break;
         }
         long endTime = new Date().getTime();

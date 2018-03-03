@@ -9,8 +9,10 @@ package daiwei.algorithm.util;
  */
 public interface SortName {
 
-    public static final String SelectionSort = "selectionSort";
+    String SelectionSort = "selectionSort";
 
-    public static final String BubbleSort = "bubbleSort";
+    String BubbleSort = "bubbleSort";
+
+    String InsertionSort = "insertionSort";
 
 }
