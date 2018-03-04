@@ -11,11 +11,15 @@ import daiwei.algorithm.util.SortTestHelper;
  */
 public class TestMain {
 
+//    InsertionSortPro > bubbleSortPro > insertionSort > selectionSort > bubbleSort
     public static void main(String[] args) {
-//        Integer[] randomArray = SortTestHelper.generateRandomArray(10000, 0, 100);
-        Integer[] randomArray = SortTestHelper.generateNearlyOrderedArray(100000, 100);
+        Integer[] randomArray = SortTestHelper.generateRandomArray(30000, 0, 1000);
+//        Integer[] randomArray = SortTestHelper.generateNearlyOrderedArray(10000, 100);
         Integer[] randomArray1 = randomArray.clone();
+
+        Integer[] randomArray2 = randomArray.clone();
         SortTestHelper.testSort(SortName.SelectionSort, randomArray1);
-        SortTestHelper.testSort(SortName.InsertionSort, randomArray);
+        SortTestHelper.testSort(SortName.InsertionSort, randomArray2);
+        SortTestHelper.testSort(SortName.BubbleSort, randomArray);
     }
 }

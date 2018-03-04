@@ -10,6 +10,8 @@ import daiwei.algorithm.util.SortTestHelper;
  */
 public class InsertionSort {
 
+    private InsertionSort() {}
+
     /**
      * 插入排序正常版
      * @param arr
@@ -30,7 +32,7 @@ public class InsertionSort {
         for (int i = 1; i < arr.length; i++) {
             Comparable e = arr[i];
             int index = i;
-            for (int j = i  ; j > 0 && arr[j-1].compareTo(e) > 0; j--) {
+            for (int j = i; j > 0 && arr[j-1].compareTo(e) > 0; j--) {
                 arr[j] = arr[j-1];
                 index = j - 1  ;
             }

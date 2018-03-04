@@ -11,6 +11,8 @@ import daiwei.algorithm.util.SortTestHelper;
  */
 public class SelectionSort {
 
+    private SelectionSort() {}
+
     public static void sort(Comparable[] arr) {
         //找出每轮最小值，然后和当前轮数的位置相调换
         for (int i = 0; i < arr.length; i++) {

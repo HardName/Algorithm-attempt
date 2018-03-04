@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 
+import daiwei.algorithm.sort.BubbleSort;
 import daiwei.algorithm.sort.InsertionSort;
 import daiwei.algorithm.sort.SelectionSort;
 
@@ -82,8 +83,13 @@ public class SortTestHelper {
                 break;
 
             case SortName.InsertionSort:
-                InsertionSort.sortPro(arr);
+                InsertionSort.sort(arr);
+                break;
+
+            case SortName.BubbleSort:
+                BubbleSort.sort(arr);
             default: break;
+
         }
         long endTime = new Date().getTime();
         if(isSort(arr)) {
