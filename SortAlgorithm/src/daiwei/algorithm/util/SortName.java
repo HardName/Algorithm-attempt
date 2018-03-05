@@ -15,4 +15,6 @@ public interface SortName {
 
     String InsertionSort = "insertionSort";
 
+    String SHELL_SORT = "shellSort";
+
 }

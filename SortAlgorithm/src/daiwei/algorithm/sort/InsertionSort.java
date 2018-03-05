@@ -31,12 +31,11 @@ public class InsertionSort {
     public static void sortPro(Comparable[] arr) {
         for (int i = 1; i < arr.length; i++) {
             Comparable e = arr[i];
-            int index = i;
-            for (int j = i; j > 0 && arr[j-1].compareTo(e) > 0; j--) {
+            int j = i;
+            for (; j > 0 && arr[j-1].compareTo(e) > 0; j--) {
                 arr[j] = arr[j-1];
-                index = j - 1  ;
             }
-            arr[index] = e;
+            arr[j] = e;
 
         }
     }

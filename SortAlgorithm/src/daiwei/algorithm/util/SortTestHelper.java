@@ -7,6 +7,7 @@ import java.util.Random;
 import daiwei.algorithm.sort.BubbleSort;
 import daiwei.algorithm.sort.InsertionSort;
 import daiwei.algorithm.sort.SelectionSort;
+import daiwei.algorithm.sort.ShellSort;
 
 /**
  * 排序算法工具类
@@ -87,7 +88,10 @@ public class SortTestHelper {
                 break;
 
             case SortName.BubbleSort:
-                BubbleSort.sort(arr);
+                BubbleSort.sortPro(arr);
+                break;
+            case SortName.SHELL_SORT:
+                ShellSort.sort(arr);
             default: break;
 
         }
@@ -119,9 +123,5 @@ public class SortTestHelper {
             }
         }
         return true;
-
     }
-
-
-
 }
