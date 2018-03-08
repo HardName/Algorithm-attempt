@@ -4,10 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 
-import daiwei.algorithm.sort.BubbleSort;
-import daiwei.algorithm.sort.InsertionSort;
-import daiwei.algorithm.sort.SelectionSort;
-import daiwei.algorithm.sort.ShellSort;
+import daiwei.algorithm.sort.*;
 
 /**
  * 排序算法工具类
@@ -17,6 +14,8 @@ import daiwei.algorithm.sort.ShellSort;
  * @since 2018/3/3 10:43
  */
 public class SortTestHelper {
+
+
 
     /**
      * 随机生成一个 乱序的 int数组
@@ -79,19 +78,22 @@ public class SortTestHelper {
 
         long startTime = new Date().getTime();
         switch (sortName) {
-            case SortName.SelectionSort:
+            case SortName.SELECTION_SORT:
                 SelectionSort.sort(arr);
                 break;
 
-            case SortName.InsertionSort:
+            case SortName.INSERTION_SORT:
                 InsertionSort.sort(arr);
                 break;
 
-            case SortName.BubbleSort:
+            case SortName.BUBBLE_SORT:
                 BubbleSort.sortPro(arr);
                 break;
             case SortName.SHELL_SORT:
-                ShellSort.sort(arr);
+                ShellSort.mySort(arr);
+                break;
+            case SortName.MERGE_SORT:
+                MergeSort.sort(arr, 0 ,arr.length-1);
             default: break;
 
         }

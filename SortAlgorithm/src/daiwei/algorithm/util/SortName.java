@@ -9,12 +9,14 @@ package daiwei.algorithm.util;
  */
 public interface SortName {
 
-    String SelectionSort = "selectionSort";
+    String SELECTION_SORT = "selectionSort";
 
-    String BubbleSort = "bubbleSort";
+    String BUBBLE_SORT = "bubbleSort";
 
-    String InsertionSort = "insertionSort";
+    String INSERTION_SORT= "insertionSort";
 
     String SHELL_SORT = "shellSort";
+
+    String MERGE_SORT = "mergeSort";
 
 }

@@ -13,6 +13,10 @@ public class ShellSort {
     private ShellSort() {
     }
 
+    /**
+     * 希尔排序
+     * @param arr
+     */
     public static void sort(Comparable[] arr) {
 
         int n = arr.length;
@@ -37,5 +41,27 @@ public class ShellSort {
             step /= 2;
         }
 
+    }
+
+
+    public static void  mySort(Comparable[] arr) {
+        int n = arr.length;
+
+        int step = 0;
+        while(3*step < n) {
+            step = 3*step + 1;
+        }
+
+        while (step >= 1) {
+            for(int i = step; i < n; i++) {
+                Comparable e = arr[i];
+                int j = i;
+                for(;j >= step&&e.compareTo(arr[j-step]) < 0; j-=step) {
+                    arr[j-step] = arr[j];
+                }
+                arr[j] = e;
+            }
+            step /= 3;
+        }
     }
 }
