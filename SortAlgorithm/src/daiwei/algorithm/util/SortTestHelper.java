@@ -76,30 +76,59 @@ public class SortTestHelper {
 
     public static void testSort(String sortName, Comparable[] arr) {
 
-        long startTime = new Date().getTime();
+        long startTime = 0;
+        long endTime = 0;
         switch (sortName) {
             case SortName.SELECTION_SORT:
+                startTime = new Date().getTime();
                 SelectionSort.sort(arr);
+                endTime = new Date().getTime();
                 break;
 
             case SortName.INSERTION_SORT:
+                startTime = new Date().getTime();
                 InsertionSort.sort(arr);
+                endTime = new Date().getTime();
                 break;
 
             case SortName.BUBBLE_SORT:
+                startTime = new Date().getTime();
                 BubbleSort.sortPro(arr);
+                endTime = new Date().getTime();
                 break;
             case SortName.SHELL_SORT:
+                startTime = new Date().getTime();
                 ShellSort.mySort(arr);
+                endTime = new Date().getTime();
                 break;
             case SortName.MERGE_SORT:
-                MergeSort.sort(arr, 0 ,arr.length-1);
+                startTime = new Date().getTime();
+                MergeSort.sortBU(arr);
+                endTime = new Date().getTime();
+                break;
+            case SortName.QUICK_SORT:
+                startTime = new Date().getTime();
+                QuickSort.sort(arr);
+                endTime = new Date().getTime();
+                break;
+            case SortName.JAVA_DEFAULT:
+                startTime = new Date().getTime();
+                Arrays.sort(arr);
+                endTime = new Date().getTime();
+//              java util.arrays 使用的是 归并排序
+                break;
+
+            case SortName.BOBO_QUICKSORT:
+                startTime = new Date().getTime();
+                BobosQuickSort.sort(arr);
+                endTime = new Date().getTime();
+                break;
             default: break;
 
         }
-        long endTime = new Date().getTime();
+
         if(isSort(arr)) {
-            System.out.println(arr.length + "个元素，" + sortName + " 排序方法，花费的时间为" + ((endTime - startTime) / 1000.0));
+            System.out.println(arr.length + "个元素，" + sortName + " 排序算法，花费的时间为" + ((endTime - startTime) / 1000.0)+"s");
         } else {
             System.out.println("排序失败");
         }

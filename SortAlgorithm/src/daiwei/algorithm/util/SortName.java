@@ -17,6 +17,12 @@ public interface SortName {
 
     String SHELL_SORT = "shellSort";
 
+    String BOBO_QUICKSORT = "boboQuickSort";
+
     String MERGE_SORT = "mergeSort";
+
+    String QUICK_SORT = "quickSort";
+
+    String JAVA_DEFAULT = "javaDefault";
 
 }
