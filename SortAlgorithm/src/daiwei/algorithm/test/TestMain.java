@@ -13,13 +13,14 @@ public class TestMain {
 
 //    InsertionSortPro > bubbleSortPro > insertionSort > selectionSort > bubbleSort
     public static void main(String[] args) {
-        Integer[] randomArray = SortTestHelper.generateRandomArray(3000000, 0, 1000);
+        Integer[] randomArray = SortTestHelper.generateRandomArray(100, 0, 10000);
         Integer[] randomArray1 = randomArray.clone();
         Integer[] randomArray2 = randomArray.clone();
         Integer[] randomArray3 = randomArray.clone();
         SortTestHelper.testSort(SortName.SHELL_SORT, randomArray3);
         SortTestHelper.testSort(SortName.QUICK_SORT,randomArray1);
         SortTestHelper.testSort(SortName.MERGE_SORT, randomArray2);
-        SortTestHelper.testSort(SortName.BOBO_QUICKSORT,randomArray);
+//        System.out.println(SortTestHelper.isRightOrder(randomArray1, 100, randomArray1[0]));
+//        SortTestHelper.testSort(SortName.INSERTION_SORT,randomArray);
     }
 }

@@ -87,7 +87,7 @@ public class SortTestHelper {
 
             case SortName.INSERTION_SORT:
                 startTime = new Date().getTime();
-                InsertionSort.sort(arr);
+                InsertionSort.sortPro(arr);
                 endTime = new Date().getTime();
                 break;
 
@@ -108,7 +108,7 @@ public class SortTestHelper {
                 break;
             case SortName.QUICK_SORT:
                 startTime = new Date().getTime();
-                QuickSort.sort(arr);
+                QuickSort.quickSort3Ways(arr);
                 endTime = new Date().getTime();
                 break;
             case SortName.JAVA_DEFAULT:
@@ -154,5 +154,24 @@ public class SortTestHelper {
             }
         }
         return true;
+    }
+
+
+    /**
+     * 检查数组的第i个大元素是否是e
+     * @param arr 传入的 arr乱序顺序均可
+     * @param i   第 i 大的元素 [1, arr.length] N
+     * @return 是否比较结果正确
+     */
+    public static boolean isRightOrder(Comparable[] arr, int i, Comparable e) {
+        boolean isSort = isSort(arr);
+        if(!isSort) {
+            ShellSort.sort(arr);
+        }
+        if(e.equals(arr[arr.length-i])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

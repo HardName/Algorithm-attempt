@@ -1,9 +1,5 @@
 package daiwei.algorithm.sort;
 
-import java.util.Date;
-
-import daiwei.algorithm.util.SortTestHelper;
-
 /**
  * 归并排序
  * 归并排序的优化方案，
@@ -71,8 +67,8 @@ public class MergeSort {
      * @param r     length-1数组的右边界
      */
     public static void sort(Comparable[] arr, int l, int r) {
-        if(l + 15 >= r) {
-            ShellSort.sort(arr);
+        if(l  >= r) {
+//            ShellSort.sort(arr);
             return;
         }
         int m = (l+r)/2;
@@ -98,12 +94,12 @@ public class MergeSort {
     private static int min(int a , int b) {
         return a > b ? b:a;
     }
-
-    public static void main(String[] args) {
-        Integer[] randomArray = SortTestHelper.generateRandomArray(1000000, 0, 1000);
-        long startTime = new Date().getTime();
-        QuickSort.sort(randomArray);
-        long endTime = new Date().getTime();
-        System.out.println((endTime - startTime) / 1000.0);
-    }
+//
+//    public static void main(String[] args) {
+//        Integer[] randomArray = SortTestHelper.generateRandomArray(1000000, 0, 1000);
+//        long startTime = new Date().getTime();
+//        QuickSort.sort(randomArray);
+//        long endTime = new Date().getTime();
+//        System.out.println((endTime - startTime) / 1000.0);
+//    }
 }
