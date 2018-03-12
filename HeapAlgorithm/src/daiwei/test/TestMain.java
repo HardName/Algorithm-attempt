@@ -16,11 +16,15 @@ public class TestMain {
     public static void main(String[] args) {
         Random random = new Random();
         MaxHeap<Integer> maxHeap = new MaxHeap<>(100);
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 30; i++) {
             maxHeap.insert(random.nextInt(50));
         }
         HeapUtils.printData(maxHeap.getData());
 //        System.out.println(maxHeap.getDataByIndex(2));
+        HeapUtils.treePrint(maxHeap);
+        System.out.println(maxHeap.exactMaxItem());
+        HeapUtils.treePrint(maxHeap);
+        System.out.println(maxHeap.exactMaxItem());
         HeapUtils.treePrint(maxHeap);
     }
 }

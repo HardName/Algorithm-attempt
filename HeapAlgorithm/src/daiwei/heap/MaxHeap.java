@@ -42,12 +42,18 @@ public class MaxHeap<T extends Comparable> {
 
     }
 
+    /**
+     * 将某个节点按照规则，上树
+     *
+     * @param k
+     */
     private void shiftUp(int k) {
         while (k > 1 && data[k].compareTo(data[k / 2]) > 0) {
             HeapUtils.swap(data, k, k / 2);
             k /= 2;
         }
     }
+
 
     public T[] getData() {
         return this.data;
@@ -59,4 +65,28 @@ public class MaxHeap<T extends Comparable> {
         }
         return 0;
     }
+
+    private void shiftDown(int k) {
+        while (2*k+1 <= count && (data[2 * k].compareTo(data[k]) > 0 || data[2 * k + 1].compareTo(data[k]) > 0)) {
+            if (data[2 * k].compareTo(data[2 * k + 1]) > 0) {
+                HeapUtils.swap(data, k, 2 * k);
+                k = 2 * k;
+            } else {
+                HeapUtils.swap(data, k, 2 * k + 1);
+                k = 2 * k + 1;
+            }
+        }
+    }
+
+    public T exactMaxItem() {
+        Comparable max = data[1];
+        HeapUtils.swap(data, 1, count);
+        count--;
+        shiftDown(1);
+
+        return (T) max;
+    }
+
+
+
 }
