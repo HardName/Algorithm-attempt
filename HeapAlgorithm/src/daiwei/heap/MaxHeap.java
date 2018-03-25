@@ -17,6 +17,18 @@ public class MaxHeap<T extends Comparable> {
         count = 0;
     }
 
+    public MaxHeap(T[] arr) {
+        this.data = (T[]) new Comparable[arr.length + 1];
+
+        for(int i = 0; i < arr.length; i++) {
+            data[i+1] = arr[i];
+        }
+        count = arr.length;
+        for (int i = data.length  / 2; i > 0; i--) {
+            shiftDown(i);
+        }
+    }
+
     public int size() {
         return count;
     }
@@ -67,7 +79,7 @@ public class MaxHeap<T extends Comparable> {
     }
 
     private void shiftDown(int k) {
-        while (2*k+1 <= count && (data[2 * k].compareTo(data[k]) > 0 || data[2 * k + 1].compareTo(data[k]) > 0)) {
+        while (2 * k + 1 <= count && (data[2 * k].compareTo(data[k]) > 0 || data[2 * k + 1].compareTo(data[k]) > 0)) {
             if (data[2 * k].compareTo(data[2 * k + 1]) > 0) {
                 HeapUtils.swap(data, k, 2 * k);
                 k = 2 * k;
@@ -86,7 +98,6 @@ public class MaxHeap<T extends Comparable> {
 
         return (T) max;
     }
-
 
 
 }

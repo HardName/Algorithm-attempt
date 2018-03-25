@@ -2,7 +2,7 @@ package daiwei.util;
 
 import java.util.Arrays;
 
-import daiwei.heap.MaxHeap;
+import daiwei.heap.MyMaxHeap;
 
 /**
  * 堆操作工具类
@@ -24,11 +24,17 @@ public class HeapUtils {
         data[j] = e;
     }
 
+    public static void swap(Comparable i, Comparable e) {
+        Comparable t = i;
+        i = e;
+        e = t;
+    }
+
     public static void printData(Comparable[] data) {
         System.out.println(Arrays.toString(data));
     }
 
-    public static void treePrint(MaxHeap<Integer> maxHeap){
+    public static void treePrint(MyMaxHeap<Integer> maxHeap){
 
         if( maxHeap.size() >= 100 ){
             System.out.println("This print function can only work for less than 100 integer");
@@ -37,7 +43,7 @@ public class HeapUtils {
 
         System.out.println("The max heap size is: " + maxHeap.size());
         System.out.println("Data in the max heap: ");
-        for( int i = 1 ; i <= maxHeap.size() ; i ++ ){
+        for( int i = 0 ; i < maxHeap.size() ; i ++ ){
             // 我们的print函数要求堆中的所有整数在[0, 100)的范围内
             assert maxHeap.getData()[i] >= 0 && maxHeap.getData()[i] < 100;
             System.out.print(maxHeap.getDataByIndex(i) + " ");
@@ -64,7 +70,7 @@ public class HeapUtils {
             int curLevelNumber = Math.min(maxHeap.size()-(int)Math.pow(2,level)+1,(int)Math.pow(2,level));
             boolean isLeft = true;
             for( int indexCurLevel = 0 ; indexCurLevel < curLevelNumber ; index ++ , indexCurLevel ++ ){
-                line1 = putNumberInLine( maxHeap.getDataByIndex(index) , line1 , indexCurLevel , curTreeMaxLevelNumber*3-1 , isLeft );
+                line1 = putNumberInLine( maxHeap.getDataByIndex(index-1) , line1 , indexCurLevel , curTreeMaxLevelNumber*3-1 , isLeft );
                 isLeft = !isLeft;
             }
             System.out.println(line1);
