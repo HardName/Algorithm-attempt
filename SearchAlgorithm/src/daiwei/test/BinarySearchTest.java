@@ -10,7 +10,7 @@ import daiwei.search.BinarySearch;
  * @version 1.0.0
  * @since 2018/3/25 13:57
  */
-public class MainTest {
+public class BinarySearchTest {
 
     public static void main(String[] args) {
         Random rand = new Random();
@@ -22,7 +22,7 @@ public class MainTest {
 //            }
         }
         Arrays.sort(arr);
-        int target = 60;
+        int target = 100;
         Integer search = BinarySearch.searchWithRec(arr, target);
         Integer floor = BinarySearch.getFloor(arr, target);
         Integer ceil = BinarySearch.getCeil(arr, target);
