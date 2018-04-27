@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GraphAlgorithm.iml" filepath="$PROJECT_DIR$/GraphAlgorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Graph-basic.iml" filepath="$PROJECT_DIR$/Graph-basic.iml" />
     </modules>
   </component>
 </project>
