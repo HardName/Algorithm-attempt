@@ -1,7 +1,6 @@
 package graph;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * 稠密图 - 邻阶矩阵
@@ -88,10 +87,12 @@ public class DenseGraph extends Graph {
     @Override
     public void printGraph() {
         for (int i = 0; i < n; i++) {
-            Iterable<Integer> iterableList = getIterableList(i);
-            Iterator<Integer> iterator = iterableList.iterator();
-            while (iterator.hasNext()) {
-                System.out.print(iterator.next()+" ");
+            for (int j = 0; j < n; j++) {
+                if(g[i][j]) {
+                    System.out.print("1  ");
+                } else {
+                    System.out.print("0  ");
+                }
             }
             System.out.println();
         }

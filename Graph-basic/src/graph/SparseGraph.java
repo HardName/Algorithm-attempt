@@ -70,13 +70,14 @@ public class SparseGraph extends Graph {
     @Override
     public void printGraph() {
         for (int i = 0; i < n; i++) {
-            Iterable<Integer> iterableList = getIterableList(n);
+            Iterable<Integer> iterableList = getIterableList(i);
             Iterator<Integer> iterator = iterableList.iterator();
-            System.out.print(n+" : ");
+            System.out.print(i+" : ");
             while (iterator.hasNext()) {
                 System.out.print(iterator.next()+" ");
             }
             System.out.println();
         }
     }
+
 }
