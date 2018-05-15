@@ -1,7 +1,9 @@
-package graph;
+package graph.Path;
 
 import java.util.LinkedList;
 import java.util.Queue;
+
+import graph.common.Graph;
 
 /**
  * 求最短路径使用 <strong>bfs</strong> 实现

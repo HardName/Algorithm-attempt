@@ -1,4 +1,6 @@
-package graph;
+package graph.Path;
+
+import graph.common.Graph;
 
 /**
  * 求出路径的普通方法，不是最短路径

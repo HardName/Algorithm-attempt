@@ -1,9 +1,11 @@
-package graph;
+package graph.normalGraph;
 
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+
+import graph.common.Graph;
 
 /**
  * 疏密图 - 领接表
@@ -30,8 +32,6 @@ public class SparseGraph extends Graph {
     @Override
     public void addEdge(int v, int w) {
         if (v < n && v >= 0 && w < n && w >= 0) {
-//            判断两个节点之间是否会存在边的情况，如果存在不做添加边操作，
-//            因此理论上不存在平行边的情况
             if (v != w&&!hasEdge(v, w)) {
                 g[v].add(w);
                 if (!directed) {

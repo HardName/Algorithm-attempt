@@ -1,6 +1,8 @@
-package graph;
+package graph.normalGraph;
 
 import java.util.ArrayList;
+
+import graph.common.Graph;
 
 /**
  * 稠密图 - 邻阶矩阵

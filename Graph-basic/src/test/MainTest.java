@@ -1,9 +1,9 @@
 package test;
 
-import graph.NormalPath;
-import graph.Path;
-import graph.ShortestPath;
-import graph.SparseGraph;
+import graph.Path.NormalPath;
+import graph.Path.Path;
+import graph.Path.ShortestPath;
+import graph.normalGraph.SparseGraph;
 
 /**
  * @author DW

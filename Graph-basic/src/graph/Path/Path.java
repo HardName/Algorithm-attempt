@@ -1,6 +1,8 @@
-package graph;
+package graph.Path;
 
 import java.util.Stack;
+
+import graph.common.Graph;
 
 /**
  * @author DW
